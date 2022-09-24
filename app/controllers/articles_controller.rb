@@ -4,10 +4,14 @@ class ArticlesController < ApplicationController
   # GET /articles or /articles.json
   def index
     @articles = Article.all
+    @comments = Comment.all
+
   end
 
   # GET /articles/1 or /articles/1.json
   def show
+    @comments = Comment.all
+    
   end
 
   # GET /articles/new

@@ -10,24 +10,48 @@
               <%= link_to image_tag article.image_url if article.image %>
             </p>
           </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-1">
+                  like
+              </div>
+              <div class="col-2">
+
+                  <%= link_to "comment", new_comment_path, class:"fa-regular fa-heart" %>
+                
+
+              </div>
+              <div class="col-1">
+                share
+              </div>                
+            </div>     
+
             <p class="border-bottom">
-               <%= article.title %>
+               <strong>
+                <%= "130,074 likes" %>
+              </strong><br>
+              <strong>
+                <%= current_user.username %>
+                
+              </strong>
                <%= article.body %>
             </p>
-
-            
-
-           
-
+          </div>
         </div>
 
         <p>
-          <%= link_to "Show this article", article %>
+          <%= link_to "view all comments", article %>
         </p>
+        <br>
+        <div class="border-bottom">
+          <%= time_ago_in_words(article.created_at) %>
+        </div>
+
+
+
       <% end %>
     </div>
 
     <%#= link_to "New article", new_article_path %>
  
-
 </div> 

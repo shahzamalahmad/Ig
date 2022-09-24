@@ -37,7 +37,7 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
 
@@ -67,4 +67,21 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+# For devise
+config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+# For letter_opener
+config.action_mailer.delivery_method = :letter_opener
+config.action_mailer.perform_deliveries = true
+
+
+
+# setting to something large, e.g. 6.months or 1.year or similar may be desirable).
+
+# config.remember_for = 2.years
+
+# In the same file, change the default email to one from your application:
+
+# config.mailer_sender = 'no-reply@example.com'
+
 end
